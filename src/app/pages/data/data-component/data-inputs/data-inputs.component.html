@@ -1,0 +1,38 @@
+<form [formGroup]="inputForm"  novalidate>
+  <div class="form-row align-items-center">
+    <div class="col-sm-2 ">
+      <label for="timer">Timer (ms) :</label>
+      <input id="timer" type="number" class="form-control" [formControlName]="'timer'" />
+      <div class="invalid-feedback" *ngIf="inputForm.get('timer')?.invalid && inputForm.get('timer')?.touched">
+        <div *ngIf="inputForm.get('timer')?.hasError('required')">Timer is required.</div>
+        <div *ngIf="inputForm.get('timer')?.hasError('min')">Timer must be greater than or equal to 1000.</div>
+      </div>
+    </div>
+
+    <div class="col-sm-2 my-1">
+      <label for="size">Size:</label>
+      <input id="size" type="number" class="form-control" [formControlName]="'size'" />
+      <div class="invalid-feedback" *ngIf="inputForm.get('size')?.invalid && inputForm.get('size')?.touched">
+        <div *ngIf="inputForm.get('size')?.hasError('required')">Size is required.</div>
+        <div *ngIf="inputForm.get('size')?.hasError('min')">Size must be greater than or equal to 1.</div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 my-1">
+      <label for="ids">Ids:</label>
+      <input id="ids" type="text" class="form-control" [formControlName]="'ids'" />
+      <div class="invalid-feedback" *ngIf="inputForm.get('ids')?.invalid && inputForm.get('ids')?.touched">
+        <div *ngIf="inputForm.get('ids')?.hasError('invalidFormat')">Please provide valid id format!</div>
+      </div>
+    </div>
+
+    <div class="field">
+      <div  class='btn-wrapper'>
+        <button type="submit" class="btn btn-primary" (click)="onGetData()">Get Data</button>
+        <button class="btn btn-secondary" (click)="onStopData()"> stop data</button>
+      </div>
+    </div>
+
+
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<div class="container">
+  <section>
+    <data-inputs (getData)="getData($event)"
+                 (stopData)="stopData($event)"></data-inputs>
+  </section>
+
+<section  class="table-section">
+  <data-table [data]="dataItems$" ></data-table>
+  <div class="button-wrapper">
+    <button class="btn btn-secondary "
+        (click)="loadMore()">
+      <span class="bi bi-three-dots">
+      </span>
+    </button>
+  </div>
+
+</section>
+
+</div>

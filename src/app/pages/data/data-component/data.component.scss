@@ -1,0 +1,17 @@
+@import "src/app/styles/colors";
+
+section {
+ margin-top: 40px;
+ margin-bottom: 50px;
+}
+
+.table-section {
+  padding: 5px;
+  border:1px solid $BBC6D0;
+
+}
+
+.button-wrapper {
+  justify-content: center;
+  display: flex;
+}

@@ -1,0 +1,10 @@
+@import "src/app/styles/colors";
+
+table {
+  border:1px solid $BBC6D0;
+}
+
+.table td, th {
+  text-align: center;
+  vertical-align: middle;
+}

@@ -1,0 +1,16 @@
+<table class="table table-fixed" >
+  <thead>
+  <tr>
+    <th class="tb-fixed">ID</th>
+    <th>Color</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="table-row" >
+    <td >{{childItem.id}}</td>
+    <td >
+     <span [ngStyle]="{'background-color': childItem.color}" > {{childItem.color}} </span>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "b2b-task": {
+    "worker-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/b2b-task",
+            "outputPath": "dist/worker-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -30,16 +30,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.scss"
+
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
+                  "maximumWarning": "2mb",
                   "maximumError": "1mb"
                 },
                 {
@@ -65,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "b2b-task:build:production"
+              "browserTarget": "worker-app:build:production"
             },
             "development": {
-              "browserTarget": "b2b-task:build:development"
+              "browserTarget": "worker-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "b2b-task:build"
+            "browserTarget": "worker-app:build"
           }
         },
         "test": {
@@ -94,8 +98,10 @@
             ],
             "styles": [
               "src/styles.scss"
+
             ],
-            "scripts": []
+            "scripts": [],
+            "webWorkerTsConfig": "tsconfig.worker.json"
           }
         }
       }

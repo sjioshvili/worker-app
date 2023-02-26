@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Int</th>
+    <th>Float</th>
+    <th>Color</th>
+    <th>Child</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let item of data |async" class="table-row">
+    <td>{{item.id}}</td>
+    <td>{{item.int}}</td>
+    <td>{{item.float}}</td>
+    <td >
+      <span [ngStyle]="{'background-color': item.color}" >{{item.color}}</span>
+    </td>
+    <td><app-child-item [childItem]="item.child"></app-child-item></td>
+  </tr>
+  </tbody>
+</table>

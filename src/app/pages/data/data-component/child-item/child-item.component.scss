@@ -1,0 +1,21 @@
+@import "src/app/styles/colors";
+
+table {
+  border:1px solid $BBC6D0;
+}
+.table-row {
+  max-height: 10px !important;
+}
+.table td, th,  {
+  text-align: center;
+  vertical-align: middle;
+
+}
+.tb-fixed {
+  width: 10px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}

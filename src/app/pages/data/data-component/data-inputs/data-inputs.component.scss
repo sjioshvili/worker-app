@@ -1,0 +1,19 @@
+.field {
+  max-width: 200px;
+}
+.row {
+  display: flex;
+  align-items: flex-end;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 20px;
+  padding-top: 24px;
+}
+.invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545;
+}
